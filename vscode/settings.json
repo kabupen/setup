@@ -1,0 +1,235 @@
+{
+    "workbench.colorTheme": "Visual Studio 2017 Dark - C++",
+    "security.workspace.trust.untrustedFiles": "open",
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk (lualatex)",
+            "tools": [
+                "lualatexmk"
+            ]
+        },
+        {
+            "name": "latexmk 🔃",
+            "tools": [
+                "latexmk"
+            ]
+        },
+        {
+            "name": "latexmk (latexmkrc)",
+            "tools": [
+                "latexmk_rconly"
+            ]
+        },
+        {
+            "name": "latexmk (xelatex)",
+            "tools": [
+                "xelatexmk"
+            ]
+        },
+        {
+            "name": "pdflatex ➞ bibtex ➞ pdflatex × 2",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "Compile Rnw files",
+            "tools": [
+                "rnw2tex",
+                "latexmk"
+            ]
+        },
+        {
+            "name": "Compile Jnw files",
+            "tools": [
+                "jnw2tex",
+                "latexmk"
+            ]
+        },
+        {
+            "name": "tectonic",
+            "tools": [
+                "tectonic"
+            ]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+
+        {
+            "name": "lualatexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-lualatex",
+                "-outdir=%OUTDIR%",
+                "--shell-escape",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "xelatexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-xelatex",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "latexmk_rconly",
+            "command": "latexmk",
+            "args": [
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "rnw2tex",
+            "command": "Rscript",
+            "args": [
+                "-e",
+                "knitr::opts_knit$set(concordance = TRUE); knitr::knit('%DOCFILE_EXT%')"
+            ],
+            "env": {}
+        },
+        {
+            "name": "jnw2tex",
+            "command": "julia",
+            "args": [
+                "-e",
+                "using Weave; weave(\"%DOC_EXT%\", doctype=\"tex\")"
+            ],
+            "env": {}
+        },
+        {
+            "name": "jnw2texmintex",
+            "command": "julia",
+            "args": [
+                "-e",
+                "using Weave; weave(\"%DOC_EXT%\", doctype=\"texminted\")"
+            ],
+            "env": {}
+        },
+        {
+            "name": "tectonic",
+            "command": "tectonic",
+            "args": [
+                "--synctex",
+                "--keep-logs",
+                "%DOC%.tex"
+            ],
+            "env": {}
+        }
+    ],
+
+
+    // --------------------------------------------------------------  
+    //  VSCode general
+    // --------------------------------------------------------------  
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "editor.mouseWheelZoom": true,
+    "editor.minimap.enabled" : false, // 右上のミニマップ非表示
+    "editor.cursorSmoothCaretAnimation": "on", // カーソルがニュルッと動く
+
+    /* workbench */
+    "workbench.tree.renderIndentGuides": "always", // ファイルツリーにインデントのガイド線
+    "workbench.tree.indent": 16, // ファイルツリーのインデント幅
+    "workbench.editor.enablePreview": true, // ファイルをプレビューモードで開く
+
+    /* terminal */
+    "terminal.integrated.copyOnSelection": true, // ターミナルで選択するとコピー
+    "terminal.integrated.rightClickBehavior": "paste", // 右クリックで貼り付け
+
+    // --------------------------------------------------------------  
+    //  Vim
+    // --------------------------------------------------------------  
+    // VSCode 自身のショートカットは keybindings.json で定義
+    // --------------------------------------------------------------  
+    "pasteImage.path": "${currentFileDir}/images/${currentFileNameWithoutExt}",
+    "pasteImage.prefix": "./",
+    "pasteImage.showFilePathConfirmInputBox": true,
+    "pasteImage.filePathConfirmInputBoxMode": "onlyName",
+    "pasteImage.defaultName": "YMMDD-HHmmss",
+
+    "workbench.startupEditor": "none",
+
+    "python.pythonPath": "",
+    "python.autoComplete.extraPaths": [],
+    "python.analysis.extraPaths": [],
+    "[python]": {
+        "editor.formatOnType": true
+    },
+
+    // --------------------------------------------------------------  
+    //                             Vim
+    // --------------------------------------------------------------  
+    //  VSCode 自身のショートカットは keybindings.json で定義
+    // --------------------------------------------------------------  
+    // 一般的な設定
+    "vim.hlsearch" : true, // ハイライト表示
+    "vim.incsearch": true, // 入力中にも検索
+    "vim.useSystemClipboard": true, // ヤンクとコピペのレジストリを同期する
+    "vim.leader": "<space>",
+
+    // インサートモード終了時に日本語入力を無効にする
+
+    // ノーマルモードの設定
+    "vim.normalModeKeyBindings": [
+        { "before" : ["u"], "commands" : ["undo"] }, // vim の undo を VSCode のundoにする
+        { "before" : ["<C-r>"], "commands" : ["redo"] }, // vim の redo を VSCode の redo に割り当てる
+        { "before": ["C-n"], "commands": [ ":nohl" ] }, // ハイライトを消す
+
+        { "before": [ "g", "f" ], "commands": [ "editor.action.referenceSearch.trigger" ] }, //　変数の参照箇所を表示
+        { "before": [ "<leader>", "e" ], "commands": [ "workbench.view.explorer" ] }, // エクスプローラーへ移動
+        // { "before": [ "<leader>", "o" ], "commands": [ "workbench.action.gotoSymbol" ] },
+        // { "before": ["<leader>", "<"], "commands": [ ":tabm -1" ] },
+    ],
+    
+    // インサートモード
+    "vim.insertModeKeyBindings": [
+        { "before" : ["<C-m>"], "commandas" : ["editor.action.triggerSuggest"] } // サジェストの発火
+    ],
+    "editor.fontSize": 10,
+}
