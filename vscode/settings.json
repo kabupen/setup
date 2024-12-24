@@ -193,34 +193,7 @@
     "[python]": {
         "editor.formatOnType": true
     },
-
-    // --------------------------------------------------------------  
-    //                             Vim
-    // --------------------------------------------------------------  
-    //  VSCode 自身のショートカットは keybindings.json で定義
-    // --------------------------------------------------------------  
-    // 一般的な設定
-    "vim.hlsearch" : true, // ハイライト表示
-    "vim.incsearch": true, // 入力中にも検索
-    "vim.useSystemClipboard": true, // ヤンクとコピペのレジストリを同期する
-    "vim.leader": "<space>",
-
-    // ノーマルモードの設定
-    "vim.normalModeKeyBindings": [
-        { "before" : ["u"], "commands" : ["undo"] }, // vim の undo を VSCode のundoにする
-        { "before" : ["<C-r>"], "commands" : ["redo"] }, // vim の redo を VSCode の redo に割り当てる
-        { "before": ["C-n"], "commands": [ ":nohl" ] }, // ハイライトを消す
-
-        { "before": [ "g", "f" ], "commands": [ "editor.action.referenceSearch.trigger" ] }, //　変数の参照箇所を表示
-        { "before": [ "<leader>", "e" ], "commands": [ "workbench.view.explorer" ] }, // エクスプローラーへ移動
-        // { "before": [ "<leader>", "o" ], "commands": [ "workbench.action.gotoSymbol" ] },
-        // { "before": ["<leader>", "<"], "commands": [ ":tabm -1" ] },
-    ],
     
-    // インサートモード
-    "vim.insertModeKeyBindings": [
-        { "before" : ["<C-m>"], "commandas" : ["editor.action.triggerSuggest"] } // サジェストの発火
-    ],
     "editor.fontSize": 10,
     "workbench.iconTheme": "material-icon-theme",
     "redhat.telemetry.enabled": true,
@@ -228,4 +201,40 @@
     "explorer.confirmDelete": false,
     "python.createEnvironment.trigger": "off",
     "git.openRepositoryInParentFolders": "always",
+
+    // --------------------------------------------------------------  
+    //                             Vim
+    // --------------------------------------------------------------  
+    //  VSCode 自身のショートカットは keybindings.json で定義
+    // --------------------------------------------------------------  
+    /* 一般的な設定 */
+    // ハイライト表示
+    "vim.hlsearch" : true,
+    // 入力中にも検索
+    "vim.incsearch": true,
+    // ヤンクとコピペのレジストリを同期する
+    "vim.useSystemClipboard": true,
+    "vim.leader": "<space>",
+
+    // ノーマルモードの設定
+    "vim.normalModeKeyBindings": [
+        // vim の undo を VSCode のundoにする
+        { "before" : ["u"], "commands" : ["undo"] }, 
+        // vim の redo を VSCode の redo に割り当てる
+        { "before" : ["<C-r>"], "commands" : ["redo"] },
+        // ハイライトを消す
+        { "before": ["C-n"], "commands": [ ":nohl" ] },
+        //　変数の参照箇所を表示
+        { "before": [ "g", "f" ], "commands": [ "editor.action.referenceSearch.trigger" ] },
+        // エクスプローラーへ移動
+        { "before": [ "<leader>", "e" ], "commands": [ "workbench.view.explorer" ] }, 
+        // { "before": [ "<leader>", "o" ], "commands": [ "workbench.action.gotoSymbol" ] },
+        // { "before": ["<leader>", "<"], "commands": [ ":tabm -1" ] },
+    ],
+    
+    // インサートモード
+    "vim.insertModeKeyBindings": [
+        // サジェストの発火
+        { "before" : ["<C-m>"], "commandas" : ["editor.action.triggerSuggest"] }
+    ],
 }
