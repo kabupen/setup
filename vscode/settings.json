@@ -1,5 +1,4 @@
 {
-    "workbench.colorTheme": "Visual Studio 2017 Dark - C++",
     "security.workspace.trust.untrustedFiles": "open",
     "latex-workshop.latex.recipes": [
         {
@@ -180,14 +179,7 @@
 
     /* terminal */
     "terminal.integrated.copyOnSelection": true, // ターミナルで選択するとコピー
-    "terminal.integrated.rightClickBehavior": "paste", // 右クリックで貼り付け
-
-    // --------------------------------------------------------------  
-    //  Vim
-    // --------------------------------------------------------------  
-    // VSCode 自身のショートカットは keybindings.json で定義
-    // --------------------------------------------------------------  
-    "pasteImage.path": "${currentFileDir}/images/${currentFileNameWithoutExt}",
+    "terminal.integrated.rightClickBehavior": "paste",
     "pasteImage.prefix": "./",
     "pasteImage.showFilePathConfirmInputBox": true,
     "pasteImage.filePathConfirmInputBoxMode": "onlyName",
@@ -213,8 +205,6 @@
     "vim.useSystemClipboard": true, // ヤンクとコピペのレジストリを同期する
     "vim.leader": "<space>",
 
-    // インサートモード終了時に日本語入力を無効にする
-
     // ノーマルモードの設定
     "vim.normalModeKeyBindings": [
         { "before" : ["u"], "commands" : ["undo"] }, // vim の undo を VSCode のundoにする
@@ -232,4 +222,10 @@
         { "before" : ["<C-m>"], "commandas" : ["editor.action.triggerSuggest"] } // サジェストの発火
     ],
     "editor.fontSize": 10,
+    "workbench.iconTheme": "material-icon-theme",
+    "redhat.telemetry.enabled": true,
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "explorer.confirmDelete": false,
+    "python.createEnvironment.trigger": "off",
+    "git.openRepositoryInParentFolders": "always",
 }
